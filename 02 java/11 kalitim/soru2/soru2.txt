@@ -1,0 +1,28 @@
+Personel sınıfı oluştur
+asgariUcret sabit değeri tanimla (15000 TL)
+adSoyad, hizmetYili alanları oluştur
+Setter ve Getter ları olustur
+maasHesapla metodu oluştur
+(asgari ücret + çalıştığı her yıl için 1000 TL)
+toString() metodu tanımla (Ahmet Kara maaşı 20000 TL)
+
+SatisPersoneli alt sınıfı oluştur
+satisMiktari alanı oluştur
+primHesapla metodu oluştur (Satışın %5i)
+Maaşına primi ekle
+
+Isci alt sınıfı oluştur
+fazlaMesaiSaatUcreti sabiti tanımla (100 TL)
+fazlaMesaiSaati alanı tanımla
+Maaşın fazla mesaisini ekle
+
+BilgiIslemPersoneli alt sınıfı oluştur
+Çalıştığı her yıl için 1000 TL yerine 3000 TL verilecek
+
+ 
+
+
+
+
+
+
