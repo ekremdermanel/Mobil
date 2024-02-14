@@ -1,0 +1,7 @@
+Bir layout ta Fragment açmak
+
+FragmentManager fragmentManager = getSupportFragmentManager();
+FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+OrnekFragment1 fragment = new OrnekFragment1();
+fragmentTransaction.replace(R.id.frameLayout1,fragment);
+fragmentTransaction.commit();
