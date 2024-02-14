@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity3 extends AppCompatActivity {
+public class MainActivity4 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,10 +15,9 @@ public class MainActivity3 extends AppCompatActivity {
         setContentView(R.layout.activity_main3);
 
         Intent intent = getIntent();
-        String gelenIsim = intent.getStringExtra("isim");
-        int gelenNumara = intent.getIntExtra("numara",0);
-        TextView textView = findViewById(R.id.textView);
-        textView.setText("Merhaba "  + gelenNumara + " numaralı " + gelenIsim);
+	Ogrenci gelenOgrenci = (Ogrenci) intent.getSerializableExtra("ogrenci");
+	TextView textView = findViewById(R.id.textView);
+        textView.setText(gelenOgrenci.toString());
     }
 
     public void gonder(View view) {

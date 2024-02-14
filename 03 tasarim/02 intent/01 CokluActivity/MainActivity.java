@@ -25,4 +25,14 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("numara", 96);
         startActivity(intent);
     }
+
+    public void nesneGonder(View view) {
+	Ogrenci ogrenci = new Ogrenci();
+        ogrenci.numara=20;
+        ogrenci.adSoyad="Ahmet Kara";
+        ogrenci.cinsiyet="erkek";
+        Intent intent = new Intent(this,MainActivity4.class);
+        intent.putExtra("ogrenci",ogrenci);
+        startActivity(intent);
+    }
 }
