@@ -114,6 +114,18 @@ public class Urun implements Serializable
 
 
 
+MainActivity
+
+urunler listesini adapter kullanarak recyclerView1 e bağla
+
+RecyclerView recyclerView1 = findViewById(R.id.recyclerView1);
+recyclerView1.setLayoutManager(new LinearLayoutManager(this));
+adapter = new UrunAdapter(this,urunler);
+recyclerView1.setAdapter(adapter);
+
+
+
+
 
 DetayActivity
 
