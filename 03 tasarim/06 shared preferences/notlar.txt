@@ -1,0 +1,39 @@
+Veri Kaydedecek veya Okuyacak değişkeni tanımla
+
+SharedPreferences sharedPreferences;
+
+
+
+VERİ KAYDETME
+
+
+sharedPreferences=this.getPreferences(Context.MODE_PRIVATE);
+SharedPreferences.Editor editor=sharedPreferences.edit();
+String kullaniciAdi = edtKullanici.getText().toString();
+editor.putString("kullaniciAdi",kullaniciAdi);
+editor.apply();
+
+
+
+
+VERİ OKUMA
+
+
+sharedPreferences=this.getPreferences(Context.MODE_PRIVATE);
+String gelenKullaniciAdi=sharedPreferences.getString("kullaniciAdi","");
+if(!gelenKullaniciAdi.isEmpty()){
+  edtKullanici.setText(gelenKullaniciAdi);
+}
+
+
+
+
+Ekran kapatıldığında değişken değerini sil
+
+@Override
+    protected void onDestroy() {
+        sharedPreferences=null;
+        super.onDestroy();
+    }
+
+

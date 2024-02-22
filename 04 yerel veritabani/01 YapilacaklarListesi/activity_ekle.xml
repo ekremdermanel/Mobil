@@ -5,23 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+    tools:context=".EkleActivity">
 
     <EditText
         android:id="@+id/editText1"
         android:layout_width="match_parent"
-        android:layout_height="50sp"
-        android:hint="Ad Soyad" />
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Başlık" />
 
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="start|top"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:hint="Açıklama" />
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:onClick="ekle"
+        android:text="Ekle" />
 </LinearLayout>

@@ -1,0 +1,46 @@
+GERİ BUTON
+
+Detay
+getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+Manifest
+<activity
+            android:name=".DetayActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity"
+            />
+
+
+EKLE BUTON
+drawable - new - vector asset
+
+res new folder - menu
+
+menu - resource file
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item android:id="@+id/add_menu_plus"
+    android:icon="@drawable/ic_add"
+    app:showAsAction="always"
+    android:title="Ekle"
+    ></item>
+</menu>
+
+
+
+MainActivity
+
+public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.add_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.add_menu_plus)
+        {
+            Toast.makeText(getApplicationContext(), "Menu", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }

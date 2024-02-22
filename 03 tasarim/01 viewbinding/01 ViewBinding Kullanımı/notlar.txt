@@ -1,4 +1,4 @@
-1. build.gradle dosyasında android bloğu içerisine kodu ekle 
+1. build.gradle (Module) dosyasında android bloğu içerisine kodu ekle 
 
 buildFeatures {
         viewBinding true
