@@ -19,7 +19,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     SQLiteDatabase database;
-    YapilacakAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new YapilacakAdapter(this,arrayList);
+        YapilacakAdapter adapter = new YapilacakAdapter(this,arrayList);
         recyclerView.setAdapter(adapter);
     }
 
