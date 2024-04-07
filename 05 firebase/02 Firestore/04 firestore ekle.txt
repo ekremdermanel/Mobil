@@ -1,0 +1,48 @@
+﻿**************************************
+1. YOL
+**************************************
+
+Map<String, Object> data = new HashMap<>();
+data.put("baslik", edtBaslik.getText().toString());
+data.put("aciklama", edtAciklama.getText().toString());
+
+db.collection("haberler")
+    .add(data)
+    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        @Override
+        public void onSuccess(DocumentReference documentReference) {
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+        }
+    })
+    .addOnFailureListener(new OnFailureListener() {
+        @Override
+        public void onFailure(@NonNull Exception e) {
+            Toast.makeText(EkleActivity.this, "Hata", Toast.LENGTH_SHORT).show();
+        }
+    });
+
+
+**************************************
+2. YOL
+**************************************
+
+Haber haber = new Haber();
+haber.baslik=edtBaslik.getText().toString();
+haber.aciklama=edtAciklama.getText().toString();
+
+db.collection("haberler")
+    .add(haber)
+    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        @Override
+        public void onSuccess(DocumentReference documentReference) {
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+        }
+    })
+    .addOnFailureListener(new OnFailureListener() {
+        @Override
+        public void onFailure(@NonNull Exception e) {
+            Toast.makeText(EkleActivity.this, "Hata", Toast.LENGTH_SHORT).show();
+        }
+    });

@@ -1,0 +1,84 @@
+******************************
+Firebase Proje Oluþturma
+******************************
+
+https://firebase.google.com
+
+Firebase console a google hesabýyla baðlan
+
+Add Project
+
+Proje Adý - OkulHaber
+
+Google Analytics (opsiyonel)
+veri analizi için açabilirsin
+
+Default Account for Firebase
+
+
+
+******************************
+Firebase Projesine Android Uygulamasý ekleme
+******************************
+
+Add an app - Add an Android app
+
+1. ADIM
+Android Studio daki projenin paket adýný gir
+(com.example.okulhaber)
+
+2. ADIM
+google-services.json dosyasýný indir
+
+Projede Android görünümünden Project görünümüne geç
+
+Kopyaladýðýn google-services.json dosyasýný app klasörüne yapýþtýr
+
+Tekrar Android görünümüne dön
+
+3. ADIM
+Gradle ayarlarýný yap (Groovy seç yeni sürümler Kotlin DSL)
+
+build.gradle (Project)
+
+plugins
+id 'com.google.gms.google-services' version '4.4.1' apply false
+
+
+build.gradle (Module)
+
+plugins
+id 'com.google.gms.google-services'
+
+
+dependencies
+implementation platform('com.google.firebase:firebase-bom:32.8.0')
+implementation 'com.google.firebase:firebase-analytics'
+
+
+Projede Sync Now seçeneðine týkla
+
+4. ADIM
+Tamamlandý
+Documentation inceleyebilirsin
+https://firebase.google.com/docs
+
+
+
+
+
+
+******************************
+Daha Önce Oluþturulmuþ Firebase Projesi Ayarlarýna Girme
+******************************
+
+Varolan projenin
+- ayarlarýný deðiþtirmek
+- google-services.json dosyasýna ulaþmak
+- gradle kodlarýna ulaþmak için
+
+Firebase console - Project Settings
+General Settings - See SDK instructions
+
+
+

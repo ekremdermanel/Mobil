@@ -1,0 +1,48 @@
+FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
+**************************************
+1. YOL
+**************************************
+
+db.collection("haberler")
+    .get()
+    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        @Override
+        public void onComplete(@NonNull Task<QuerySnapshot> task) {
+            if(task.isSuccessful()) {
+                for (QueryDocumentSnapshot document:task.getResult()) {
+                    Haber haber = new Haber();
+                    haber.id = document.getId();
+                    haber.baslik = document.getData().get("baslik").toString();
+                    haber.aciklama = document.getData().get("aciklama").toString();
+                    arrayList.add(haber);
+                }
+                adapter.notifyDataSetChanged();
+            } else {
+                Toast.makeText(MainActivity.this, "Hata", Toast.LENGTH_SHORT).show();
+            }
+        }
+    });
+
+**************************************
+2. YOL
+**************************************
+
+Haber.cs de id alan�na DocumentId referans�n� ekle
+@DocumentId
+public String id;
+
+
+db.collection("haberler")
+    .get()
+    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        @Override
+        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+            for (QueryDocumentSnapshot documentSnapshot:queryDocumentSnapshots) {
+                Haber haber = documentSnapshot.toObject(Haber.class);
+                arrayList.add(haber);
+            }
+            adapter.notifyDataSetChanged();
+        }
+    });

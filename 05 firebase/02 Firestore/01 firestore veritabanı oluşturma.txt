@@ -1,0 +1,63 @@
+******************************
+Firestore Veritabaný Oluþturma
+******************************
+
+
+Firebase console da projeyi aç
+
+Sol menu - Build - Firestore Database
+
+Create database
+
+Veritabanýnýn saklanacaðý lokasyonu seç
+
+Güvenlik ayarlarý - Test Mode ayarla
+(Herkese 30 günlük okuma / yazma izni verir)
+
+
+
+
+
+******************************
+Firestore Veritabaný Örnek collection ve document oluþturma
+******************************
+
+Firestore daki
+collection : veritabanýndaki tablo,
+document : tablodaki satýrlar,
+fields : sütun adlarý olarak düþünülebilir
+
+
+haberler collection oluþtur
+
+Ýçerisinde document oluþtur
+Auto-ID, baslik (string) ve aciklama (string) alanlarý olacak
+
+Örnek veriler gir
+
+
+
+******************************
+Firestore Ayarlarý
+******************************
+
+Rules seçeneði
+
+match /{document=**} {
+      allow read, write;
+    }
+
+
+
+Firestore documentation aç
+https://cloud.google.com/firestore/docs
+
+
+build.gradle (Module)
+dependencies
+implementation("com.google.firebase:firebase-firestore:24.11.0")
+
+Projede Sync Now seçeneðine týkla
+
+
+ 

@@ -1,0 +1,15 @@
+﻿db.collection("haberler").document(id)
+    .delete()
+    .addOnSuccessListener(new OnSuccessListener<Void>() {
+        @Override
+        public void onSuccess(Void aVoid) {
+            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(intent);
+        }
+    })
+    .addOnFailureListener(new OnFailureListener() {
+        @Override
+        public void onFailure(@NonNull Exception e) {
+            Toast.makeText(DetayActivity.this, "Hata", Toast.LENGTH_SHORT).show();
+        }
+    });
