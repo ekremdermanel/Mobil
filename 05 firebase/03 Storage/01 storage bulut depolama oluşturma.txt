@@ -1,0 +1,44 @@
+******************************
+Storage Oluþturma
+******************************
+
+
+Firebase console da projeyi aç
+
+Sol menu - Build - Storage
+
+Get started
+
+Güvenlik ayarlarý - Test Mode ayarla
+(Herkese 30 günlük okuma / yazma izni verir)
+
+Verilerin saklanacaðý lokasyonu seç
+
+
+
+
+******************************
+Storage Ayarlarý
+******************************
+
+Rules seçeneði
+
+match /{allPaths=**} {
+      allow read, write;
+    }
+
+
+
+Storage documentation aç
+
+https://firebase.google.com/docs/storage/android
+
+
+build.gradle (Module)
+dependencies
+implementation("com.google.firebase:firebase-storage")
+
+Projede Sync Now seçeneðine týkla
+
+
+ 
