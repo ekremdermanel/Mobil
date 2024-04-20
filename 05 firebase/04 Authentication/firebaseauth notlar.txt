@@ -1,0 +1,49 @@
+email
+
+build.gradle (module app)
+
+dependencies {
+...
+implementation("com.google.firebase:firebase-auth")
+implementation("com.google.android.gms:play-services-auth:20.7.0")
+}
+
+
+Firebase konsolunda Kimlik Doğrulama bölümünü açın.
+Oturum açma yöntemi sekmesinde E-posta/Parola sağlayıcısını etkinleştirin. E-posta bağlantısıyla oturum açmayı kullanmak için e-posta/şifreyle oturum açmanın etkinleştirilmesi gerektiğini unutmayın.
+Aynı bölümde E-posta bağlantısı (şifresiz oturum açma) oturum açma yöntemini etkinleştirin.
+
+
+
+telefon
+
+?????
+
+build.gradle (module app)
+
+dependencies {
+...
+implementation 'com.google.android.play:integrity:1.3.0'
+}
+
+firebase app settings sha1 kodunu gir
+sha1 için gradle paneli - execute task - signingreport
+
+?????
+
+
+
+google
+
+https://developer.android.com/training/sign-in/passkeys?hl=tr&authuser=1
+
+build.gradle (module app)
+
+dependencies {
+...
+implementation "androidx.credentials:credentials:1.3.0-alpha01"
+}
+
+
+
+

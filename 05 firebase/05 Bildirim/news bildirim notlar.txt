@@ -1,0 +1,63 @@
+build.gradle (app)
+implementation 'com.google.firebase:firebase-messaging:23.4.0'
+
+
+MainActivity onCreate cihaz token al
+FirebaseMessaging.getInstance().getToken()
+
+MyFirebaseMessagingService sınıfı oluştur
+onMessageReceived
+onNewToken
+showNotification
+metodları override
+
+Engage - Messaging
+kampanya oluştur (tüm cihazlar)
+test et (token ile tek cihaz)
+
+HTTP v1 API İLE BİLDİRİM GÖNDERME (PHP,JS,PYTHON VS)
+
+OAuth 2.0 Playground aç google ile bağlan
+https://developers.google.com/oauthplayground/
+
+STEP1:
+https://www.googleapis.com/auth/firebase.messaging
+STEP2:
+"Exchange authorization code for tokens"
+ya29 ile başlayan "Access token" al
+STEP3:
+url
+'https://fcm.googleapis.com/v1/projects/<project_id>/messages:send'
+
+headers
+{
+  'Authorization': 'Bearer ' + _access_token,
+  'Content-Type': 'application/json',
+}
+
+body
+{
+  'message':{
+     'token':'cfCzwaReTIyCLeiaNa9MR7:APA91bE8FbZnnbd2Z_UmgQeyYEOXvpod72YKK5wxmWRZo7U1_vDj4vlIK2Eo0DJuzrl_U7XqxUoxuW4_-XXt7fyx36uD1LIBtZq_lrHC_C9QjPtTwt4w8nIrfM-xx88X8W4cRdO2hR-Y',
+     'notification':{
+       'body':'This is pytohn',
+       'title':'FCM Message postman'
+     }
+  }
+}
+
+
+
+POSTMAN DE DENE
+
+
+
+https://firebase.google.com/docs/cloud-messaging/migrate-v1?hl=en&authuser=1#python
+
+Project settings - Service accounts
+Generete new private key
+json dosyası indir
+
+send klasörü json dosyasını at
+send.py hazırla ve çalıştır
+
