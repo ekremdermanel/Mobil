@@ -13,6 +13,7 @@
         android:layout_width="271dp"
         android:layout_height="176dp"
         android:layout_gravity="center_horizontal"
+        android:onClick="sec"
         app:srcCompat="@drawable/no_image" />
 
     <Button
@@ -22,4 +23,12 @@
         android:layout_marginTop="10dp"
         android:onClick="yukle"
         android:text="Yükle" />
+
+     <Button
+        android:id="@+id/btnListele"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="listele"
+        android:text="Listele" />
 </LinearLayout>

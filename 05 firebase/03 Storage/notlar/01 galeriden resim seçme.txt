@@ -2,28 +2,22 @@ ImageView imgFoto;
 Uri imageUri;
 
 
-imgFoto=findViewById(R.id.imgFoto);
-        imgFoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityIntent.launch(intent);
-            }
-        });
-
-
-
-ActivityResultLauncher<Intent> startActivityIntent = registerForActivityResult(
-        new ActivityResultContracts.StartActivityForResult(),
-        new ActivityResultCallback<ActivityResult>() {
-            @Override
-            public void onActivityResult(ActivityResult result) {
-                if(result.getResultCode() == RESULT_OK) {
-                    imageUri = result.getData().getData();
-                    imgFoto.setImageURI(imageUri);
+ActivityResultLauncher<Intent> galeriIntent = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if(result.getResultCode() == RESULT_OK) {
+                        imageUri = result.getData().getData();
+                        imgFoto.setImageURI(imageUri);
+                    }
                 }
-            }
-        });
+            });
+
+    public void sec(View view) {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        galeriIntent.launch(intent);
+    }
 

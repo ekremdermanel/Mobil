@@ -1,16 +1,12 @@
 package com.example.fotografarsivi;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -70,5 +66,8 @@ public class DetayActivity extends AppCompatActivity {
                 Toast.makeText(DetayActivity.this, "Hata", Toast.LENGTH_SHORT).show();
             }
         });
+
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
     }
 }
