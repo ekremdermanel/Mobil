@@ -1,0 +1,19 @@
+Documentation
+
+https://firebase.google.com/docs/auth/android/
+
+
+
+build.gradle (Module)
+
+dependencies {
+    implementation("com.google.firebase:firebase-auth")
+}
+
+
+
+FirebaseAuth örneğini oluşturma
+
+private FirebaseAuth mAuth;
+
+mAuth = FirebaseAuth.getInstance();

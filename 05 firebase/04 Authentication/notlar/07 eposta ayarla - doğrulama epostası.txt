@@ -1,0 +1,37 @@
+Kullanıcının e-posta adresini ayarlayın
+
+FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+user.updateEmail("user@example.com")
+        .addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Log.d(TAG, "User email address updated.");
+                }
+            }
+        });
+
+
+
+Bir kullanıcıya doğrulama e-postası gönderin
+
+FirebaseAuth auth = FirebaseAuth.getInstance();
+FirebaseUser user = auth.getCurrentUser();
+
+user.sendEmailVerification()
+        .addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Log.d(TAG, "Email sent.");
+                }
+            }
+        });
+
+
+
+
+Ayrıca, e-postayı göndermeden önce Auth örneğindeki dil kodunu güncelleyerek doğrulama e-postasını yerelleştirebilirsiniz.
+
+auth.setLanguageCode("tr");
