@@ -1,0 +1,9 @@
+build.gradle (Module)
+dependencies
+implementation("com.google.firebase:firebase-database")
+
+
+
+
+private DatabaseReference mDatabase;
+mDatabase = FirebaseDatabase.getInstance().getReference();

@@ -1,0 +1,72 @@
+*********************************
+VERİ LİSTESİNE EKLEME
+*********************************
+
+String gonderen = edtGonderen.getText().toString();
+String icerik = edtIcerik.getText().toString();
+
+Mesaj mesaj = new Mesaj();
+mesaj.gonderen=gonderen;
+mesaj.icerik = icerik;
+
+//Map<String, Object> data = new HashMap<>();
+//data.put("gonderen", gonderen);
+//data.put("icerik", icerik);
+
+String mesajId = mDatabase.child("mesajlar").push().getKey();
+mDatabase.child("mesajlar").child(mesajId).setValue(mesaj)
+        .addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(MainActivity.this, "Mesaj Gönderildi", Toast.LENGTH_SHORT).show();
+            }
+        })
+        .addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(MainActivity.this, "Hata", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+*********************************
+VERİ LİSTESİNİ İZLEME
+*********************************
+
+ mDatabase.child("mesajlar").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Mesaj mesaj = snapshot.getValue(Mesaj.class);
+                mesaj.id = snapshot.getKey();
+                arrayList.add(mesaj);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                for(int i = 0; i < arrayList.size(); i++)
+                {
+                    if(arrayList.get(i).id.equals(snapshot.getKey())){
+                        arrayList.remove(i);
+                        break;
+                    }
+                }
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });

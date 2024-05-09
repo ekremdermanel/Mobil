@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtBaslik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Başlık"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edtBaslik"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Başlık" />
+
+        <Button
+            android:id="@+id/btnDegistir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="degistir"
+            android:text="Değiştir" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edtGonderen"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Gönderen"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edtIcerik"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Mesaj İçeriği"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnGonder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="gonder"
+            android:text="Gönder" />
+    </LinearLayout>
+</LinearLayout>
