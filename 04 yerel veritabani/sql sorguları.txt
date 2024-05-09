@@ -1,0 +1,24 @@
+--- TABLO OLUŞTURMA ---
+CREATE TABLE IF NOT EXISTS
+yapilacaklar(id INTEGER PRIMARY KEY, baslik VARCHAR, aciklama TEXT)
+
+--- VERİ EKLEME ---
+INSERT INTO
+yapilacaklar(baslik,aciklama)
+VALUES('Alışveriş Yap','Ekemek Peynir Al')
+
+
+--- VERİ SEÇME ---
+SELECT baslik,aciklama FROM yapilacaklar
+SELECT * FROM yapilacaklar 
+SELECT * FROM yapilacaklar WHERE id=4;
+
+
+--- VERİ SİLME ---
+DELETE FROM yapilacaklar WHERE id=3;
+
+
+--- VERİ GÜNCELLEME ---
+UPDATE yapilacaklar
+SET baslik='Spor Yap', aciklama='Çok yorulma'
+WHERE id=5;
