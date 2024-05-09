@@ -1,4 +1,4 @@
-package com.example.fotografarsivi;
+package com.example.fotograflar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         listView=findViewById(R.id.listView);
         arrayList=new ArrayList<>();
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,arrayList);
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ekle(View view) {
-        Intent intent = new Intent(this,UploadActivity.class);
+        Intent intent = new Intent(this,EkleActivity.class);
         startActivity(intent);
     }
 }

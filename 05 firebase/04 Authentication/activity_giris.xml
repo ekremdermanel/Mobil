@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    tools:context=".GirisActivity">
+
+    <TextView
+        android:id="@+id/txtBaslik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GİRİŞ"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edtEposta"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Eposta"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/edtSifre"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Şifre"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnGiris"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="giris"
+        android:text="Giriş" />
+
+    <Button
+        android:id="@+id/btnIptal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="iptal"
+        android:text="İptal" />
+
+    <Button
+        android:id="@+id/btnKayit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="kayit"
+        android:text="Kayıt" />
+</LinearLayout>

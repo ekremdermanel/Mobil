@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    tools:context=".UploadActivity">
+
+    <ImageView
+        android:id="@+id/imgFoto"
+        android:layout_width="271dp"
+        android:layout_height="176dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="sec"
+        app:srcCompat="@drawable/no_image" />
+
+    <Button
+        android:id="@+id/btnUpload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="yukle"
+        android:text="Yükle" />
+
+     <Button
+        android:id="@+id/btnListele"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="listele"
+        android:text="Listele" />
+</LinearLayout>

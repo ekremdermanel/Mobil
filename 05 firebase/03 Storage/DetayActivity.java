@@ -1,4 +1,4 @@
-package com.example.fotografarsivi;
+package com.example.fotograflar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +18,7 @@ import com.google.firebase.storage.StorageReference;
 
 public class DetayActivity extends AppCompatActivity {
 
+    ImageView imgFoto;
     String fotoAdi;
 
     @Override
@@ -25,8 +26,7 @@ public class DetayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detay);
 
-        ImageView imgFoto = findViewById(R.id.imgFoto);
-
+        imgFoto = findViewById(R.id.imgFoto);
         Intent intent = getIntent();
         fotoAdi = intent.getStringExtra("fotoAdi");
 
