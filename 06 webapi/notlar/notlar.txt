@@ -1,0 +1,8 @@
+build.gradle (Module) ekle
+implementation 'com.android.volley:volley:1.2.0'
+
+
+AndroidManifest ekle
+<uses-permission android:name="android.permission.INTERNET" />
+
+android:usesCleartextTraffic="true"
