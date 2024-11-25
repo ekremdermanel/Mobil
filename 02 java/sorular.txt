@@ -1,0 +1,67 @@
+VIEW
+Düğmelere tıklandığında ekranda "Merhaba" ve "Hoşçakal" yazan program.
+Girilen isme göre ekranda "Merhaba [isim]" mesajını gösteren program.
+Düğmeye tıklandığında ve uzun tıklandığında Layout arkaplanı, TextView yazısı, arkaplanı, yazı rengi değerlerini değiştiren program.
+
+DEĞİŞKEN, SABİT, OPERATÖRLER
+Girilen isim ve doğum yılına göre "Merhaba [isim], [yas] yaşındasın" mesajını gösteren program.
+Girilen iki sayıyı toplayan program.
+Girilen üç sayının ortalamasını hesaplayan program.
+Girilen iki sayının toplamını, farkını, çarpımını bölümünü farklı butonlarda hesaplayan program.
+Girilen taban uzunluğu ve yüksekliğe göre üçgenin alanını hesaplayan program.
+Girilen doğru ve yanlış sayısına göre neti hesaplayan program.
+Düğmelere tıklandığında ekrandaki sayıyı arttırıp azaltan program.
+Girilen TL değerini Dolar ve Euro para birimlerine çeviren program. (Dolar ve Euro kurlarını sabit olarak tanımlayın)
+Girilen yarıçapa göre dairenin alanını ve çevresini hesaplayan program. (PI sayısını sabit olarak 3,14 tanımlayın)
+
+HATA AYIKLAMA
+Girilen iki sayının toplamını, farkını, çarpımını bölümünü farklı butonlarda hesaplayan programı hata ayıklama ile kontrol ederek yazınız.
+
+KARAR YAPILARI
+Girilen sayıya göre ekranda Tek veya Çift yazan program.
+Girilen iki nota ekranda ortalamayı ve yeşil renkte Geçti / kırmızı renkte Kaldı yazan program.
+Girilen yaşa göre, kullanıcının yetişkin veya çocuk olduğunu ekranda gösteren program.
+Girilen maaşın 5000 TL ve üzerinde olup olmadığını kontrol edip, "Yüksek Maaş" veya "Düşük Maaş" mesajını gösteren program.
+Girilen iki sayıyı karşılaştırarak, büyüğünü ve küçüğünü ekranda belirleyen program.
+Girilen fiyat bilgisine checkbox dan KDV seçeneği işaretlenirse %18 ekleyen program.
+Girilen ad, soyad ve switch ile seçilen "Soyadı göster" seçeneğine göre ekranda ad soyadı yazdıran program.
+Girilen fiyat ve switch ile seçilen "Ayrıntıları göster" seçeneğine göre indirim miktarı girişini gösteren ve toplam miktarı hesaplayan program.
+
+Girilen kullanıcı adı ve şifreye göre "Giriş Başarılı" veya "Hatalı Şifre" mesajlarını gösteren program. (Kullanıcı adı: admin, Şifre: abc123)
+Girilen sayının 3’e ve 5’e tam bölünüp bölünmediğini kontrol eden program.
+Girilen sayının 2’ye veya 7’ye tam bölünüp bölünmediğini kontrol eden program.
+Girilen yaş ve radio dan seçilen cinsiyete göre 18-25 yaş arasında erkek ise "İşe Uygun" mesajı gösteren program.
+Girilen iki not ve devamsızlığa göre ekranda Geçti veya Kaldı yazan program.
+
+Girilen sayının pozitif, negatif veya sıfır olduğunu kontrol edip ekranda yazan program.
+Kullanıcıdan bir not girilmesini isteyip, bu notu 0-50, 51-70, 71-90 ve 91-100 aralıklarına göre sınıflandırarak "Zayıf", "Ortalama", "İyi" ve "Mükemmel" olarak ekranda gösteren program.
+Kullanıcıdan bir ay numarası alarak, bu numaraya göre hangi mevsimde olduğunu belirleyip, "Sonbahar", "Kış", "İlkbahar", "Yaz" veya "Hata" olarak ekranda gösteren program.
+
+SWITCH CASE
+Girilen gün numarasına (1-7) göre, o numaraya karşılık gelen haftanın gününü (Pazar, Pazartesi, vb.) ekranda belirleyen program.
+Girilen ay numarasına (1-12) göre, o aya ait mevsimi (Kış, Bahar, Yaz, Sonbahar) ekranda gösteren program.
+
+RASTGELE SAYI
+Düğmeye basıldığında 2 basamaklı rastgele sayı gösteren program.
+Düğmeye basıldığında arkaplan rengini rastgele değiştiren program.
+Düğmeye basıldığında rastgele resim gösteren program.
+1 ile 100 arasında rastgele bir sayı tutarak, kullanıcıdan bu sayıyı tahmin etmesini isteyen, doğru tahmin edildiğinde "Tebrikler!" mesajı veren ve kullanıcıya kaç tahminde doğru bildiğini gösteren program.
+
+DÖNGÜLER
+1 ile 20 arası sayıları listeleyen program.
+1 ile 20 arası tek ve çift sayıları farklı düğmelerle listeleyen program.
+1 ile 20 arası sayıları radio dan yapılan seçime göre artan / azalan listeleyen program.
+1 ile 20 arası sayıları radio dan yapılan seçime göre while döngüsü artan / azalan listeleyen program.
+10 adet 0 ile 50 arası rastgele sayı listeleyen program.
+5 sayısı gelene kadar 0 ile 50 arası rastgele sayıları do while ile listeleyen program.
+
+DİZİ, ARRAYLIST
+Kullanıcıdan girdiği şehri daha önce girilmemişse ArrayList'e ekleyen, girilen şehr eğer varsa listeden silen ve tüm listeyi temizleme seçeneği sunan program.
+Kullanıcıdan girdiği şehri eğer daha önce girilmemişse ArrayList'e ekleyen, girilen şehrleri ListView'da gösteren, listeden tıklanan şehri gösteren, uzun tıklanan şehri silen ve tüm listeyi temizleme seçeneği sunan program.
+ArrayList'e 1 ile 50 arası 6 farklı rastgele sayı ekleyerek ListView'da küçükten büyüğe gösteren program.
+
+SAYAÇ
+CountDownTimer ile 10 saniyelik bir geri sayım yapan ve süre dolduğunda "Süre doldu!" mesajı ekranda gösteren program.
+Sorulan soruyu 10 saniy⁬e içerisinde bilirse "Tebrikler" yazan program.
+Sorulan 3 soruyu da 10'ar saniy⁬e içerisinde bilirse "Tebrikler" yazan program.
+
