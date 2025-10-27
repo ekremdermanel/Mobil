@@ -1,0 +1,46 @@
+*******************************
+VERİTABANI BAĞLANTISI
+*******************************
+
+SQLiteDatabase database;
+database = this.openOrCreateDatabase("YapilacaklarListesiDB", MODE_PRIVATE, null);
+
+
+
+*******************************
+TABLO OLUŞTURMA (EĞER YOKSA)
+*******************************
+
+String tablo = "CREATE TABLE IF NOT EXISTS yapilacaklar(id INTEGER PRIMARY KEY, baslik VARCHAR, aciklama TEXT)";
+database.execSQL(tablo);
+
+
+
+*******************************
+VERİ LİSTELE
+*******************************
+
+ListView listView = findViewById(R.id.listView);
+ArrayList<String> arrayList = new ArrayList<>();
+String sorgu = "SELECT * FROM yapilacaklar";
+Cursor cursor = database.rawQuery(sorgu,null);
+int kolonNo = cursor.getColumnIndex("baslik");
+while(cursor.moveToNext()) {
+    arrayList.add(cursor.getString(kolonNo));
+}
+ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,arrayList);
+listView.setAdapter(adapter);
+
+
+
+*******************************
+VERİ SİL
+*******************************
+
+String baslik = arrayList.get(i);
+String sorgu = "DELETE FROM yapilacaklar WHERE baslik=?";
+SQLiteStatement durumlar=database.compileStatement(sorgu);
+durumlar.bindString(1,baslik);
+durumlar.execute();
+arrayList.remove(i);
+adapter.notifyDataSetChanged();

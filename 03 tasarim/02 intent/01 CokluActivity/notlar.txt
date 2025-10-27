@@ -1,0 +1,3 @@
+Intent ile nesne göndermek için Ogrenci sınıfı Serializable interface inden implemente edilir.
+
+public class Ogrenci implements Serializable

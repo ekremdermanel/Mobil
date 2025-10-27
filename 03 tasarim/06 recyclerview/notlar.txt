@@ -1,0 +1,136 @@
+Urun classı oluştur
+File - New - Java Class
+
+public class Urun {
+    String urunKodu;
+    String urunAdi;
+    double fiyat;
+    int stok;
+
+    public Urun() {
+    }
+
+    public Urun(String urunKodu, String urunAdi, double fiyat, int stok) {
+        this.urunKodu = urunKodu;
+        this.urunAdi = urunAdi;
+        this.fiyat = fiyat;
+        this.stok = stok;
+    }
+}
+
+
+
+
+MainActivity urunler listesi oluştur
+
+ArrayList<Urun> urunler = new ArrayList<>(
+            Arrays.asList(
+                    new Urun("g234","Masa",100,10),
+                    new Urun("h343","Sandalye",50,5),
+                    new Urun("z354","Dolap",130,50),
+                    new Urun("k435","Sehpa",80,20)
+            )
+    );
+
+urun_card.xml yerleşim dosyası oluştur.
+layout klasörü sağ tık - Layout Resource File
+Layout olarak CardView kullan
+CardView, TextView ların Id leri ayarla
+
+
+UrunAdapter class oluştur.
+
+İçerisinde ViewHolder class tanımla ve yapıcı metot implement et.
+Bu class içinde liste satırı tasarımında kullanılan view ları tanımla
+
+Verilerin alınacağı arrayList alanı ve Intent kullanımı için context alanı tanımla
+
+Yapıcı metot oluştur
+
+Gerekli Metotları implemente et:
+ getItemCount : listedeki eleman sayısı verilir
+ onCreateViewHolder: liste satırı için oluşturulan xml ayarlanır
+ onBindViewHolder: liste satırı xml indeki view ların içeriği ve olayları ayarlanır 
+
+
+public class UrunAdapter extends RecyclerView.Adapter<UrunAdapter.ViewHolder> {
+
+    private Context context;
+    private ArrayList<Urun> arrayList;
+
+    public UrunAdapter(Context context, ArrayList<Urun> arrayList) {
+        this.context = context;
+        this.arrayList = arrayList;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.urun_card,parent,false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.textView1.setText(arrayList.get(position).urunAdi);
+        holder.textView2.setText(arrayList.get(position).fiyat + " TL");
+        holder.cardView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(context, holder.getAdapterPosition() + ". index tıklandı", Toast.LENGTH_SHORT).show();
+                Urun urun = arrayList.get(holder.getAdapterPosition());
+                Intent intent = new Intent(context,DetayActivity.class);
+                intent.putExtra("urun",urun);
+                context.startActivity(intent);
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return arrayList.size();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView textView1, textView2;
+        CardView cardView1;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            textView1 = itemView.findViewById(R.id.textView1);
+            textView2 = itemView.findViewById(R.id.textView2);
+            cardView1 = itemView.findViewById(R.id.cardView1);
+        }
+    }
+}
+
+
+
+Intent ile nesneyi göndermek için Urun sınıfını Serializable olarak ayarla
+
+public class Urun implements Serializable
+
+
+
+
+MainActivity
+
+urunler listesini adapter kullanarak recyclerView1 e bağla
+
+RecyclerView recyclerView1 = findViewById(R.id.recyclerView1);
+recyclerView1.setLayoutManager(new LinearLayoutManager(this));
+adapter = new UrunAdapter(this,urunler);
+recyclerView1.setAdapter(adapter);
+
+
+
+
+
+DetayActivity
+
+Intent ile urun verisini al ve view lara değerleri yazdır
+
+Intent intent = getIntent();
+Urun urun = (Urun) intent.getSerializableExtra("urun");
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/edtKullanici"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Kullanıcı Adı"
+        android:inputType="textPersonName"
+        android:textSize="34sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbAcik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Açık Tema"
+            android:textSize="34sp" />
+
+        <RadioButton
+            android:id="@+id/rbKoyu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Koyu Tema"
+            android:textSize="34sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnKaydet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="kaydet"
+        android:text="Kaydet"
+        android:textSize="34sp" />
+</LinearLayout>

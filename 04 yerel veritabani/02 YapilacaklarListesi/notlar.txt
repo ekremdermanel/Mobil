@@ -1,0 +1,106 @@
+*******************************
+VERİTABANI BAĞLANTISI
+*******************************
+
+SQLiteDatabase database;
+database = this.openOrCreateDatabase("YapilacaklarListesiDB", MODE_PRIVATE, null);
+
+
+
+*******************************
+TABLO OLUŞTURMA (EĞER YOKSA)
+*******************************
+
+String tablo = "CREATE TABLE IF NOT EXISTS yapilacaklar(id INTEGER PRIMARY KEY, baslik VARCHAR, aciklama TEXT)";
+database.execSQL(tablo);
+
+
+
+*******************************
+VERİ LİSTELE
+*******************************
+
+RecyclerView recyclerView = findViewById(R.id.recyclerView);
+ArrayList<Yapilacak> arrayList = new ArrayList<>();
+String sorgu = "SELECT id,baslik FROM yapilacaklar";
+Cursor cursor = database.rawQuery(sorgu,null);
+while(cursor.moveToNext()) {
+    Yapilacak yapilacak = new Yapilacak();
+    yapilacak.id = cursor.getInt(0);
+    yapilacak.baslik = cursor.getString(1);
+    arrayList.add(yapilacak);
+}
+recyclerView.setLayoutManager(new LinearLayoutManager(this));
+YapilacakAdapter adapter = new YapilacakAdapter(this,arrayList);
+recyclerView.setAdapter(adapter);
+
+
+
+*******************************
+VERİ DETAY
+*******************************
+
+textView1=findViewById(R.id.textView1);
+textView2=findViewById(R.id.textView2);
+
+Intent intent = getIntent();
+id = intent.getIntExtra("id",0);
+
+if(id==0) {
+    return;
+}
+
+database = this.openOrCreateDatabase("YapilacaklarListesiDB", MODE_PRIVATE, null);
+String sorgu = "SELECT * FROM yapilacaklar WHERE id=?";
+Cursor cursor = database.rawQuery(sorgu,new String[]{String.valueOf(id)});
+Yapilacak yapilacak = new Yapilacak();
+while(cursor.moveToNext()) {
+    yapilacak.id = cursor.getInt(0);
+    yapilacak.baslik = cursor.getString(1);
+    yapilacak.aciklama=cursor.getString(2);
+}
+
+textView1.setText(yapilacak.baslik);
+textView2.setText(yapilacak.aciklama);
+
+
+
+*******************************
+VERİ EKLE
+*******************************
+
+String baslik = editText1.getText().toString();
+String aciklama = editText2.getText().toString();
+
+String sorgu="INSERT INTO yapilacaklar(baslik,aciklama) VALUES(?,?)";
+SQLiteStatement durumlar=database.compileStatement(sorgu);
+durumlar.bindString(1,baslik);
+durumlar.bindString(2, aciklama);
+durumlar.execute();
+
+
+
+*******************************
+VERİ SİL
+*******************************
+
+String sorgu = "DELETE FROM yapilacaklar WHERE id=?";
+SQLiteStatement durumlar=database.compileStatement(sorgu);
+durumlar.bindLong(1,id);
+durumlar.execute();
+
+
+
+*******************************
+VERİ GÜNCELLE
+*******************************
+
+String baslik = editText1.getText().toString();
+String aciklama = editText2.getText().toString();
+
+String sorgu="UPDATE yapilacaklar SET baslik=? , aciklama=? WHERE id=?";
+SQLiteStatement durumlar=database.compileStatement(sorgu);
+durumlar.bindString(1,baslik);
+durumlar.bindString(2, aciklama);
+durumlar.bindLong(3, id);
+durumlar.execute();

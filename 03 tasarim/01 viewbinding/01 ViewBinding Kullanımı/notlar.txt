@@ -1,0 +1,50 @@
+1. build.gradle (Module) dosyasında android bloğu içerisine kodu ekle 
+
+buildFeatures {
+        viewBinding true
+    }
+
+
+2. MainActivity.java
+binding değişkenini tanımla
+
+private ActivityMainBinding binding;
+
+
+3. onCreate metodunu değiştir
+
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+
+yerine şunu yaz:
+
+super.onCreate(savedInstanceState);
+binding = ActivityMainBinding.inflate(getLayoutInflater());
+View view = binding.getRoot();
+setContentView(view);
+
+
+
+
+ÖRNEK: 
+
+public class MainActivity extends AppCompatActivity {
+    private ActivityMainBinding binding;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
+        binding.textView1.setText("Merhaba");
+        binding.button1.setText("Tamam");
+        binding.button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "Merhaba " + binding.editText1.getText(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+}
