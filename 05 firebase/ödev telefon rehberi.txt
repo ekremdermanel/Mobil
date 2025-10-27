@@ -1,0 +1,20 @@
+Telefon Rehberi
+Firebase Firestore Veritabanı
+
+MainActivity
+Adsoyad ve telefonlar listelenecek
+Tıklanan kayıt silinecek
+
+EkleActivity
+Girilen adsoyad ve telefon ile yeni kayıt ekle
+
+
+Uygulamaya fotoğraf eklenecek
+
+EkleActivity
+Fotoğraf seçilecek ve kayıtlara eklenecek
+- Fotoğraf storage a kaydedilecek.
+- Veritabanına fotograf alanı açıp adsoyad,telefon ve fotoğraf adı kaydedilecek.
+
+MainActivity
+Fotoğraflı kayıtlar listelenecek

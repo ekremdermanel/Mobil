@@ -1,0 +1,18 @@
+FirebaseStorage storage = FirebaseStorage.getInstance();
+String fotoAdi = UUID.randomUUID().toString();
+StorageReference storageReference = storage.getReference();
+StorageReference fotoRef = storageReference.child("images/"+fotoAdi);
+
+fotoRef.putFile(imageUri)
+        .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Snackbar.make(view, "Yüklendi", Snackbar.LENGTH_LONG).show();
+            }
+        })
+        .addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(UploadActivity.this, "Hata", Toast.LENGTH_SHORT).show();
+            }
+        });

@@ -1,0 +1,54 @@
+*********************************
+VERİ OKUMA
+*********************************
+
+mDatabase.child("baslik").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+    @Override
+    public void onComplete(@NonNull Task<DataSnapshot> task) {
+        if (task.isSuccessful()) {
+            txtBaslik.setText(task.getResult().getValue().toString());
+            edtBaslik.setText(task.getResult().getValue().toString());
+        }
+        else {
+
+        }
+    }
+});
+
+
+*********************************
+VERİ YAZMA
+*********************************
+
+String baslik = edtBaslik.getText().toString();
+mDatabase.child("baslik").setValue(baslik)
+        .addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(MainActivity.this, "Başlık Değişti", Toast.LENGTH_SHORT).show();
+            }
+        })
+        .addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(MainActivity.this, "Hata", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+*********************************
+DEĞİŞİKLİKLERİ İZLEME
+*********************************
+
+mDatabase.child("baslik").addValueEventListener(new ValueEventListener() {
+    @Override
+    public void onDataChange(@NonNull DataSnapshot snapshot) {
+        txtBaslik.setText(snapshot.getValue().toString());
+        edtBaslik.setText(snapshot.getValue().toString());
+    }
+
+    @Override
+    public void onCancelled(@NonNull DatabaseError error) {
+
+    }
+});

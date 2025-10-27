@@ -1,0 +1,30 @@
+ImageView imgFoto = findViewById(R.id.imgFoto);
+
+Intent intent = getIntent();
+fotoAdi = intent.getStringExtra("fotoAdi");
+
+FirebaseStorage storage = FirebaseStorage.getInstance();
+StorageReference storageRef = storage.getReference();
+StorageReference fotoRef = storageRef.child("images/"+fotoAdi);
+
+final long ONE_MEGABYTE = 1024 * 1024;
+fotoRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+    @Override
+    public void onSuccess(byte[] bytes) {
+        Bitmap bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        imgFoto.setImageBitmap(bitmap);
+    }
+}).addOnFailureListener(new OnFailureListener() {
+    @Override
+    public void onFailure(@NonNull Exception exception) {
+        Toast.makeText(DetayActivity.this, "Hata", Toast.LENGTH_SHORT).show();
+    }
+});
+
+
+
+
+Glide kütüphanesi
+Resim, gif ve yerel video’ları kolayca uygulamamıza dahil etmek, memory ve disk cache gibi olayları düşünmeden hızlıca uygulama geliştirmek için geliştirilmiş açık kaynak bir kütüphanedir.
+
+https://github.com/bumptech/glide

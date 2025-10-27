@@ -1,0 +1,10 @@
+Kayıt eklenme zamanı eklemek için Map yöntemi kullan
+
+data.put("tarih", FieldValue.serverTimestamp());
+
+
+
+Zaman bilgisi okumak için
+
+TimeStamp timestamp = (TimeStamp) document.getData().get("tarih");
+txtTarih.setText(timestamp.toDate().toString());
