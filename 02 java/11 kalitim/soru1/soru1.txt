@@ -1,0 +1,14 @@
+Sekil sınıfı oluştur
+genislik ve yukseklik tanımla
+2 parametreli yapıcı metod oluştur
+alan metodu tanımla (genislik * yukselik)
+toString() metodu tanımla (Şekil alanı: 20)
+
+Dikdortgen alt sınıfı tanımla
+
+Ucgen altı sınıfı tanımla
+alan metodunu değiştir (yarısı)
+
+Kare adlı Dikdörtgenin alt sınıfı oluştur
+1 parametreli yapıcı metod oluştur
+

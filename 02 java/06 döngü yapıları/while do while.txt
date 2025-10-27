@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <Button
+        android:id="@+id/buttonDongu1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Artan while" />
+
+    <Button
+        android:id="@+id/buttonDongu2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Azalan while" />
+
+    <Button
+        android:id="@+id/buttonDongu3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Artan do while" />
+
+    <Button
+        android:id="@+id/buttonDongu4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Artan do while" />
+
+    <TextView
+        android:id="@+id/textSonuc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sonuç"
+        android:textSize="24sp" />
+</LinearLayout>
+
+
+
+
+
+
+
+        buttonDongu1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textSonuc.setText("");
+                int i=1;
+                while (i<=10) {
+                    textSonuc.append(i+ "");
+                    i++;
+                }
+            }
+        });
+
+
+
+        buttonDongu2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textSonuc.setText("");
+                int i=10;
+                while(i>=1) {
+                    textSonuc.append(i + "");
+                    i--;
+                }
+            }
+        });
+
+
+ buttonDongu3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textSonuc.setText("");
+                int i=1;
+                do {
+                    textSonuc.append(i + "");
+                    i++;
+                } while(i<=10);
+            }
+        });

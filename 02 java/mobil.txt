@@ -1,0 +1,37 @@
+Girilen sayıya göre ekranda Tek veya Çift yazan program.
+
+
+Girilen iki nota ekranda ortalamayı ve yeşil renkte Geçti / kırmızı renkte Kaldı yazan program.
+
+
+
+1. Tasarım
+2. View tanımlama ve ilişkilendirme
+EditText, TextView, Button vs tanımla ve findViewById ile tasarımla ilişkilendir
+3. Tıklama, işaretleme vs olayı yaz
+4. Verileri al
+5. Hesaplamayı yap
+6. Sonucu yazdır
+
+
+
+if(sayi>9 && sayi<100) {
+    text1.setText("Sayı iki basamaklı");
+}
+
+if(ort<50 || devamsizlik>=30) {
+    text1.setText("Kaldı");
+}
+
+
+if(kullaniciAdi.equals("admin") && sifre.equals("abc123")) {
+    text1.setText("Giriş Başarılı");
+} else {
+    text1.setText("Hata");
+}
+
+
+
+Girilen yaş ve radio dan seçilen cinsiyete göre  mesajı gösteren program.
+
+

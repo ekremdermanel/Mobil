@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Uygulama2526</string>
+
+    <string-array name="mezuniyet">
+        <item>İlkokul</item>
+        <item>Ortaokul</item>
+        <item>Lise</item>
+        <item>Üniversite</item>
+    </string-array>
+</resources>

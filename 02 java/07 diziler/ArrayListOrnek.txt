@@ -1,0 +1,56 @@
+package com.example.ornekler;
+
+import java.util.ArrayList;
+
+public class ArrayListOrnek {
+    public static void main(String[] args) {
+
+        ArrayList<String> isimler;
+        isimler = new ArrayList<>();
+        isimler.add("Ahmet");
+        isimler.add("Mehmet");
+        isimler.add("Zeynep");
+        isimler.add("Mehmet");
+        System.out.println(isimler);
+
+        isimler.remove("Mehmet");
+        System.out.println(isimler);
+
+        isimler.remove(1);
+        System.out.println(isimler);
+
+        isimler.add("Mine");
+        isimler.add("Deniz");
+        isimler.add("Mustafa");
+        isimler.add("Halil");
+        System.out.println(isimler);
+
+        int toplam = isimler.size();
+
+        System.out.println("Toplam isim sayısı: " + toplam);
+        System.out.println("İlk isim: " + isimler.get(0));
+        System.out.println("Son isim: " + isimler.get(toplam-1));
+
+        System.out.println("Osman var mı? " + isimler.contains("Osman"));
+        if(isimler.contains("Mine")) {
+            System.out.println("Listede Mine Var");
+        } else {
+            System.out.println("Listede Mine Yok");
+        }
+
+        System.out.println("\n\nTÜM İSİMLER");
+        for (int i = 0; i < toplam; i++) {
+            System.out.println(isimler.get(i));
+        }
+
+        System.out.println("\n\nTÜM İSİMLER");
+        for (String isim: isimler) {
+            System.out.println(isim);
+        }
+
+        isimler.clear();
+        System.out.println(isimler);
+
+
+    }
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/editSayi1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Sayı 1"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editSayi2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Sayı 2"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="topla"
+        android:text="Topla" />
+
+    <TextView
+        android:id="@+id/textSonuc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sonuç"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+</LinearLayout>

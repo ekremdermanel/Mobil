@@ -1,0 +1,16 @@
+Girilen yaşa göre, kullanıcının yetişkin veya çocuk olduğunu ekranda gösteren program.
+Girilen maaşın 5000 TL ve üzerinde olup olmadığını kontrol edip, "Yüksek Maaş" veya "Düşük Maaş" mesajını gösteren program.
+Girilen iki sayıyı karşılaştırarak, büyüğünü ve küçüğünü ekranda belirleyen program.
+Girilen fiyat bilgisine checkbox dan KDV seçeneği işaretlenirse %18 ekleyen program.
+Girilen ad, soyad ve switch ile seçilen "Soyadı göster" seçeneğine göre ekranda ad soyadı yazdıran program.
+Girilen fiyat ve switch ile seçilen "Ayrıntıları göster" seçeneğine göre indirim miktarı girişini gösteren ve toplam miktarı hesaplayan program.
+
+Girilen kullanıcı adı ve şifreye göre "Giriş Başarılı" veya "Hatalı Şifre" mesajlarını gösteren program. (Kullanıcı adı: admin, Şifre: abc123)
+Girilen sayının 3’e ve 5’e tam bölünüp bölünmediğini kontrol eden program.
+Girilen sayının 2’ye veya 7’ye tam bölünüp bölünmediğini kontrol eden program.
+Girilen yaş ve radio dan seçilen cinsiyete göre 18-25 yaş arasında erkek ise "İşe Uygun" mesajı gösteren program.
+Girilen iki not ve devamsızlığa göre ekranda Geçti veya Kaldı yazan program.
+
+Girilen sayının pozitif, negatif veya sıfır olduğunu kontrol edip ekranda yazan program.
+Kullanıcıdan bir not girilmesini isteyip, bu notu 0-50, 51-70, 71-90 ve 91-100 aralıklarına göre sınıflandırarak "Zayıf", "Ortalama", "İyi" ve "Mükemmel" olarak ekranda gösteren program.
+Kullanıcıdan bir ay numarası alarak, bu numaraya göre hangi mevsimde olduğunu belirleyip, "Sonbahar", "Kış", "İlkbahar", "Yaz" veya "Hata" olarak ekranda gösteren program.

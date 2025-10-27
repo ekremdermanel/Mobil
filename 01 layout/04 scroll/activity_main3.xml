@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+    <!-- ScrollView içine HorizontalScrollView koyarak iki yönlü kaydırma sağlıyoruz -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- İçeriği tutacak olan LinearLayout -->
+
+
+            <!-- Her biri geniş bir satır olacak -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="32dp">
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:backgroundTint="#F48FB1"
+                    android:text="A"
+                    android:layout_marginEnd="32dp"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:backgroundTint="#FF9800"
+                    android:text="B"
+                    android:layout_marginEnd="32dp"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:backgroundTint="#A5D6A7"
+                    android:text="C"
+                    android:layout_marginEnd="32dp"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:backgroundTint="#90CAF9"
+                    android:text="D"
+                    android:layout_marginEnd="32dp"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+    </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:gravity="center"
+            android:background="#FFCC80"
+            android:layout_marginBottom="32dp"
+            android:text="Alan 1"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:gravity="center"
+            android:background="#90CAF9"
+            android:layout_marginBottom="32dp"
+            android:text="Alan 2"
+            android:textSize="24sp" />
+
+
+        </LinearLayout>
+
+</ScrollView>

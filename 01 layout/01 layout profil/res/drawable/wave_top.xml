@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="1080dp"
+    android:height="240dp"
+    android:viewportWidth="1080"
+    android:viewportHeight="240">
+
+    <!-- arka plan için tam genişlikte bir path -->
+    <path
+        android:fillColor="#FF2196F3"
+        android:pathData="M0,160 C180,100 360,100 540,140 C720,180 900,140 1080,80 L1080,0 L0,0 Z"/>
+    <!-- dalga renk olarak tint ile kontrol edilecek, fillColor beyaz bırakıldı -->
+    <path
+        android:fillColor="#00FFFFFF"
+        android:pathData="M0,160 C180,100 360,100 540,140 C720,180 900,140 1080,80 L1080,240 L0,240 Z"/>
+</vector>

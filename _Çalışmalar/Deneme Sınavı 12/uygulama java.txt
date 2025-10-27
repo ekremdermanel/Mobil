@@ -1,0 +1,115 @@
+package com.example.myapplication;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import java.util.Random;
+
+public class MainActivity extends AppCompatActivity {
+    EditText edit1, edit2;
+    Button button1, button2, button3;
+    CheckBox check1;
+    TextView text1;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+
+        edit1 = findViewById(R.id.edit1);
+        edit2 = findViewById(R.id.edit2);
+        button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
+        button3 = findViewById(R.id.button3);
+        check1 = findViewById(R.id.check1);
+        text1 = findViewById(R.id.text1);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(edit1.getText().toString().isEmpty() || edit2.getText().toString().isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Notları gir", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                int not1 = Integer.parseInt(edit1.getText().toString());
+                int not2 = Integer.parseInt(edit2.getText().toString());
+
+                if(not1>100 || not1<0 || not2>100 || not2<0) {
+                    Toast.makeText(MainActivity.this, "Notlar hatalı", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                double ort = ((double)not1 + (double)not2) / 2;
+
+                if(check1.isChecked()) {
+                    ort = ort * 1.2;
+                    if(ort>=100) {
+                        ort=100;
+                    }
+                }
+
+                text1.setText("Ortalama: " + ort);
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                text1.setText("");
+
+                int sayi1 = Integer.parseInt(edit1.getText().toString());
+                int sayi2 = Integer.parseInt(edit2.getText().toString());
+
+                for (int i = sayi1; i <= sayi2; i++) {
+                    if(i%5==0) {
+                        text1.append(i + "\n");
+                    }
+                }
+            }
+        });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                text1.setText("");
+                int sayi;
+                Random random = new Random();
+
+                do {
+                    sayi = random.nextInt(10);
+                    text1.append(sayi +  "\n");
+                } while (sayi!=5);
+
+
+                /*for (;;) {
+                    sayi = random.nextInt(10);
+                    text1.append(sayi +  "\n");
+                    if(sayi==5) {
+                        break;
+                    }
+                }*/
+            }
+        });
+
+
+    }
+}

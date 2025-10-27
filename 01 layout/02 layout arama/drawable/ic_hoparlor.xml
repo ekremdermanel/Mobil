@@ -1,0 +1,22 @@
+<!-- res/drawable/ic_speaker.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp" android:height="24dp"
+    android:viewportWidth="24" android:viewportHeight="24">
+    <!-- Speaker body -->
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M3,9v6h4l5,4V5L7,9H3z"/>
+    <!-- Sound waves (outer) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:pathData="M16.5,12c0,1.77-0.77,3.36-2,4.47"/>
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:pathData="M18.5,12c0,2.76-1.23,5.24-3.2,6.9"/>
+</vector>
